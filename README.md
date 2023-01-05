@@ -3,11 +3,6 @@ by Nishita Amberkar and Megna Biederman
 
 ![Pacman_gif Small](https://user-images.githubusercontent.com/86085312/210874581-55c69a31-d795-49ae-982b-d766a2ab8c1d.jpeg)
 
-
-
-Uploading IMG_3695.mov…
-
-
 Usage
 First you will need to fully build the code and program your FPGA to run our game. Then you will need to plug a USB keyboard into the FPGA and connect the FPGA to a VGA monitor via a VGA output.
 Once the code is programmed onto the device, you will need to create a BSP template project folder on eclipse and connect it to the soc files created in platform designer. Then generate BSP, Build the project and run the code. 
