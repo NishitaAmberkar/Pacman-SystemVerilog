@@ -1,0 +1,53 @@
+module ghost_mode(
+                input [1:0] ghost_mode, 
+                input Reset, frame_clk,
+                input logic [9:0] pacman_x_center, pacman_y_center
+                input logic [9:0] pink_x_center, pink_y_center, blue_x_center, blue_y_center, orange_x_center, orange_y_center, red_x_center, red_y_center
+                output logic [9:0] Pink_X_Motion, Pink_Y_Motion, Blue_X_Motion, Blue_Y_Motion, Orange_X_Motion, Orange_Y_Motion, Red_X_Motion, Red_Y_Motion
+                );
+
+logic [3:0] red_x_target = 408;
+logic [3:0] red_y_target = 104;
+
+always_ff @ (posedge Reset or posedge frame_clk ) begin
+     case (ghost_mode)
+		2'b00 : begin        //get out of start position
+            //red move
+            if(red_x_center > red_target) begin
+                if(wall):
+                    //go up
+                else:
+                    Red_X_Motion = -1;
+            end
+            else if(red_x_center < red_target) begin
+                if(wall):
+                    //go Up
+                    if(
+                else:
+                    Red_X_Motion = 1;
+            
+            
+
+            end
+            if
+                move
+            x = 408
+            y = 104
+            //
+
+
+
+
+
+        end
+        2'b01 begin          //scatter
+        end
+         
+        2'b10 begin         // chase
+        end
+
+        2'b11 begin         //(when power up is on and ghost is in frighten mode, send back to start)
+        end
+
+
+end

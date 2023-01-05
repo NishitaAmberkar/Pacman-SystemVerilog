@@ -1,0 +1,66 @@
+module control_unit (   input logic Clk, 
+									Reset,
+									Run,
+								    Win,
+								    Loss
+				output logic [1:0]  state    
+				);
+
+	enum logic [3:0] {  Start, 
+						Reset, 
+						Level, 
+						GameOver, 
+						YouWin
+					 }   State, Next_state;   // Internal state logic
+		
+	always_ff @ (posedge Clk)
+	begin
+		if (Reset) 
+			State <= Start;
+		else if (Run)
+		    State <= Level;
+		else
+			State <= Next_state;
+	end
+   
+	always_comb
+	begin 
+		// Default next state is staying at current state
+		Next_state = State;
+
+		// Assign next state
+		unique case (State)
+			Start : 
+				if (Run) 
+					Next_state = Level;                      
+			Level : 
+			    if (Win)
+				Next_state = YouWin;
+				if (Loss)
+				Next_state = GameOver;
+			GameOver : 
+                if (Reset) 
+					Next_state = Start;    
+			YouWin : 
+                if (Reset) 
+					Next_state = Start;  
+			default : ;
+
+		endcase
+		
+		// Assign control signals based on current state
+		case (State)
+			Start: 
+				state = 2'b00;
+			Level : 
+                state = 2'b01;
+			GameOver : 
+                state = 2'b10;
+			YouWin: ;
+                state = 2'b11;
+			default : ;
+		endcase
+	end 
+
+	
+endmodule

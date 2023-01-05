@@ -1,0 +1,16 @@
+module keycode (input [7:0] keycode_a, keycode_b,
+					output [7:0] keycode_pacman, keycode_ghost);
+					
+		assign up_pac = ;
+		assign down_pac
+		assign left_pac
+		assign right_pac
+		assign 
+					
+		always_ff @ (posed
+		begin
+		
+			if //keycode_a == up or down or left or right (of pacman) 
+			//keypac <= keya 
+		
+		end
