@@ -1,4 +1,4 @@
-PAC Man Game on FPGA 
+# PAC Man Game on FPGA 
 by Nishita Amberkar and Megna Biederman
 
 ![Pacman_gif Small](https://user-images.githubusercontent.com/86085312/210874581-55c69a31-d795-49ae-982b-d766a2ab8c1d.jpeg)
